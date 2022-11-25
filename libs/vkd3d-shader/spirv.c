@@ -9475,8 +9475,7 @@ static void vkd3d_dxbc_compiler_emit_sample(struct vkd3d_dxbc_compiler *compiler
         case VKD3DSIH_SAMPLE_FEEDBACK:
         case VKD3DSIH_SAMPLE_B:
         case VKD3DSIH_SAMPLE_B_FEEDBACK:
-            force_explicit_lod = (compiler->control_flow_depth || compiler->control_flow_has_early_return) &&
-                    vkd3d_dxbc_compiler_has_quirk(compiler, VKD3D_SHADER_QUIRK_FORCE_EXPLICIT_LOD_IN_CONTROL_FLOW);
+            force_explicit_lod = (compiler->control_flow_depth || compiler->control_flow_has_early_return);
             break;
 
         default:
